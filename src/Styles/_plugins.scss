@@ -1,0 +1,77 @@
+@import './_responsive';
+@import './variables';
+
+.react-timekeeper{
+    @include max-xxs{
+        width: 220px!important;
+    }
+}
+
+.table__wrapper,
+    .animation__wrapper {
+        position: relative;
+
+        h2 {
+            text-align: center;
+            font-size: 30px;
+        }
+    }
+
+    .table__wrapper {
+        .rdt_TableHeader {
+            position: relative;
+            padding-left: 0;
+
+            @include max-xs{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .eihLXW{
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+        }
+
+        .usuarios__header {
+            position: relative;
+            z-index: 20;
+
+            a.bt {
+                width: 100%;
+                margin: 0;
+            }
+
+            @include xs{
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+    }
+
+.leaflet-container{
+    height: 400px;
+    width: 400px;
+}
+
+.react-tabs{
+    .react-tabs__tab--selected{
+        background-color: $red;
+        color: #fff;
+    }
+}
+
+.react-date-picker__inputGroup{
+    input{
+        width: auto!important;
+        padding: 0!important;
+        background-color: transparent!important;
+    }
+
+}
+
+.react-date-picker__calendar{
+    z-index: 4!important;
+}

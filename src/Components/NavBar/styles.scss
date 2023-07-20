@@ -1,0 +1,267 @@
+@import '../../Styles/variables';
+
+header {
+    width: 100%;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    z-index: 19;
+    transition: all .5s linear;
+
+    &.fixed{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        box-shadow:-5px -5px 9px #7b7b7b;
+        z-index: 19;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .header__logo {
+            h1 {
+                margin: 0;
+
+                img{
+                    width: 70px;
+                }
+            }
+        }
+
+        .header__menu {
+            nav {
+                ul {
+                    li {
+                        display: inline-block;
+                        margin: 0 15px;
+                        position: relative;
+                        vertical-align: middle;
+
+                        a {
+                            text-decoration: none;
+                            color: #222;
+                            font-size: 18px;
+                            padding: 5px 0;
+                            display: block;
+
+                            &.nav__not-logged{
+                                cursor: not-allowed;
+                            }
+                        }
+
+                        .popup__nav{
+                            position: absolute;
+                            right: 0;
+                            width: 300px;
+                            top: 110%;
+                            background-color: $black;
+                            padding: 10px;
+                            border-radius: 20px;
+                            animation: fromBottom .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+                            visibility: hidden;
+
+                            p{
+                                color: #fff;
+                                text-align: center;
+                            }
+                        }
+
+                        @keyframes fromBottom {
+                            from{
+                                top: 150%;
+                            }
+
+                            to{
+                                top: 110%;
+                            }
+                        }
+
+                        &.menu__destaque {
+                            background-color: $red;
+                            border-radius: 25px;
+
+                            a {
+                                padding: 10px 40px;
+                                color: #fff;
+                            }
+
+                            &:hover {
+                                background-color: lighten($red, 10%);
+
+                                &::before {
+                                    content: none;
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                top: 120%;
+                                left: 0;
+                                right: 0;
+                                background-color: $red;
+                                height: 3px;
+                                animation: hoverMenu .2s linear;
+                            }
+
+                            .popup__nav{
+                                visibility: visible;
+                            }
+                        }
+
+                        @keyframes hoverMenu {
+                            0% {
+                                width: 20%;
+                            }
+
+                            50% {
+                                width: 50%;
+                            }
+
+                            100% {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.opcoes__language{
+    cursor: pointer;
+    position: relative;
+
+    &:hover{
+        .lang__current img{
+            transform: scale(1.09);
+        }
+
+        .lang__more-options{
+            visibility: visible;
+        }
+    }
+
+    .lang__current{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            width: 40px;
+        }
+    }
+
+    .lang__more-options{
+        position: absolute;
+        z-index: 4;
+        background-color: #fff;
+        padding: 20px 10px;
+        right: 0;
+        box-shadow: -1px 4px 20px 0px #cacacaee;
+        overflow: hidden;
+        visibility: hidden;
+
+        .mo__wrapper{
+            display: flex;
+            align-items: center;
+            border-radius: 25px;
+            padding: 0 10px;
+
+            &:hover{
+                background-color: #f2f2f2;
+            }
+
+            img{
+                width: 40px;
+                margin-right: 5px;
+            }
+
+            p{
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+.mobile__container-open{
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba($color: #000000, $alpha: 0.4);
+
+    .mobile__nav-close{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+    .container__content{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background-color: #fff;
+        width: 70%;
+        padding: 60px 10px;
+        transition: all .5s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+        hr{
+            margin: 20px auto;
+            border: 1px solid #f2f2f2;
+            width: 70%;
+        }
+
+        img.mobile__logo{
+            width: 100px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        h2{
+            text-align: center;
+        }
+
+        ul{
+            display: flex;
+            flex-direction: column;
+            margin-top: 40px;
+            
+            li{
+                margin: 10px 0;
+                text-align: center;
+
+                a{
+                    font-size: 24px;
+                    text-decoration: none;
+                    color: #222;
+                }
+
+                .lang__all{
+                    display: flex;
+                    margin-top: 50px;
+
+                    .mo__wrapper{
+                        flex: 1;
+                    }
+
+                    img{
+                        width: 50px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,79 @@
+@import "../../Styles/variables";
+
+.login__wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+
+    .login__ball {
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+
+        .ball {
+            height: 377px;
+            width: 377px;
+            background-color: red;
+            border-radius: 50%;
+
+            &.ball__red {
+                margin-top: -140px;
+                margin-left: -140px;
+                background-color: lighten($red, 60%);
+            }
+
+            &.ball__black {
+                margin-top: 140px;
+                background-color: lighten($black, 60%);
+            }
+        }
+    }
+
+    .login__form {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        background-color: #fff;
+        box-shadow: -2px 0px 12px #c4c4c4;
+
+        img.form__logo {
+            margin-top: 20px;
+            width: 300px;
+        }
+
+        .no__password{
+            p{
+                text-align: center;
+                margin: -3px 0 15px;
+                font-size: 13px;
+                cursor: pointer;
+                color:#a2a2a2;
+
+                &:hover{
+                    transform: scale(1.02);
+                }
+            }
+        }
+    }
+}
+
+.animation__wrapper {
+    padding: 20px;
+
+    p {
+        text-align: center;
+    }
+}
+
+.modalSenha__wrapper{
+    .modalSenha__content{
+        p{
+            margin: 10px 0;
+            color: #5e5e5e;
+        }
+    }
+}

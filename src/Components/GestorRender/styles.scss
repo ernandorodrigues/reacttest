@@ -1,0 +1,100 @@
+@import '../../Styles/responsive';
+
+.admnntad__rr {
+    display: flex;
+    flex-direction: column;
+
+    .adm__bemvindo{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        @include md{
+            flex-direction: row;
+        }
+
+        .bem__vindo-info{
+            margin-bottom: 20px;
+
+            @include max-sm{
+                text-align: center;
+            }
+        }
+
+        // p{
+        //     margin-top: 20px;
+        //     font-size: 16px;
+        // }
+    }
+
+    .adm__grid--container{
+
+        display: block;
+
+        & > div{
+            margin: 10px 0;
+        }
+
+        @include md{
+            margin-top: 14px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 10px 10px;
+            grid-template-areas:
+                "ponto pontos_hoje pontos_aprovar"
+                "logs logs grafico_users";
+    
+            .ponto { grid-area: ponto; }
+            .pontos_hoje { grid-area: pontos_hoje; }
+            .pontos_aprovar { grid-area: pontos_aprovar; }
+            .logs { grid-area: logs; }
+            .grafico_users { grid-area: grafico_users; }
+
+            & > div{
+                margin: 0;
+                max-height: 360px;
+                overflow-y: auto;
+            }
+        }
+
+    }
+}
+
+.home__header{
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+
+    .header__more{
+        margin-top: 10px;
+
+        a{
+            color: #a6a6a6;
+
+            &:hover{
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    @include sm{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .header__more{
+            margin-top: 0;
+        }
+    }
+}
+
+.graph__wrapper{
+    .recharts-wrapper{
+        margin-top: -89px;
+        margin-left: -136px;
+    }
+}

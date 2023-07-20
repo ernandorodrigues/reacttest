@@ -1,0 +1,41 @@
+@import "../../Styles/variables";
+
+.card__wrapper {
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+
+    &.not-flex{
+        display: block;
+    }
+
+    &.no-padding{
+        padding: 0;
+    }
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &.size1 {
+        flex: 1 1 20%;
+    }
+
+    &.size2 {
+        flex: 1 1 50%;
+    }
+
+    &.size3 {
+        flex: 1 1 70%;
+    }
+
+    &>a {
+        text-decoration: none;
+    }
+}
